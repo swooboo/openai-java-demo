@@ -13,8 +13,10 @@ import java.util.stream.Collectors;
 @Component
 public class OpenAiControllerImpl implements OpenAiController {
 
+    private final String OPENAI_API_KEY = System.getenv("OPENAI_API_KEY");
     private final List<ChatMessage> messages = new LinkedList<>();
-    OpenAiService openAiService = new OpenAiService("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");
+
+    OpenAiService openAiService = new OpenAiService(OPENAI_API_KEY);
 
     @Override
     public void saySystem(String text) {
