@@ -5,12 +5,8 @@ import org.springframework.stereotype.Component;
 
 @Component
 public class Demonstration {
-    OpenAiController openAiController;
-
     @Autowired
     public Demonstration(OpenAiController openAiController) {
-        this.openAiController = openAiController;
-
         System.out.println("Constructing Controller");
         System.out.println("Starting test");
         openAiController.saySystem("You are a calculator.");
