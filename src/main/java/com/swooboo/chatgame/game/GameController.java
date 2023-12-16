@@ -13,9 +13,8 @@ public interface GameController {
      * Processes the player's input in the game.
      *
      * @param input The input string from the player.
-     * @return The response from the game.
      */
-    String saySomethingToGame(String input);
+    void sayToGame(String input);
 
 
     /**
