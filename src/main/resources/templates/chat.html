@@ -14,6 +14,9 @@
             font-weight: bold;
             width: 100px;
         }
+        #last-status {
+            font-size: x-small;
+        }
     </style>
 </head>
 <body>
@@ -33,6 +36,9 @@
 <form method="POST">
     <input name="message" type="text" class="full-width" placeholder="Enter your message here">
 </form>
+
+<!-- Small label for last status -->
+<label id="last-status"><span th:text="${lastStatus}">[Status]</span></label>
 
 </body>
 </html>

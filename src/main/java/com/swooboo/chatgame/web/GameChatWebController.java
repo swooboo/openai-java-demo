@@ -23,6 +23,8 @@ public class GameChatWebController {
         List<GameMessage> gameMessages = gameController.getAllMessagesInDialog();
 
         model.addAttribute("gameMessages", gameMessages);
+        model.addAttribute("lastStatus", gameController.getCurrentGameStatus());
+
         return "chat";
     }
 

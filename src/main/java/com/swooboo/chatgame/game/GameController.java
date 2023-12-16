@@ -23,4 +23,11 @@ public interface GameController {
      * @return An instance of GameMessage containing all dialog messages.
      */
     List<GameMessage> getAllMessagesInDialog();
+
+    /**
+     * Retrieves current game status.
+     *
+     * @return The status of the game.
+     */
+    String getCurrentGameStatus();
 }

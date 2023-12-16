@@ -1,5 +1,6 @@
 package com.swooboo.chatgame.game;
 
+import com.theokanning.openai.ListSearchParameters;
 import com.theokanning.openai.OpenAiResponse;
 import com.theokanning.openai.assistants.Assistant;
 import com.theokanning.openai.messages.Message;
@@ -70,5 +71,15 @@ public class GameControllerImpl implements GameController {
 
         Collections.reverse(messagesInReverseOrder);
         return messagesInReverseOrder;
+    }
+
+    @Override
+    public String getCurrentGameStatus() {
+        ListSearchParameters searchParameters = ListSearchParameters.builder().build();
+        String statuses = openAiService.listRuns(currentThread.getId(), searchParameters).data.stream()
+                .map(Run::getStatus)
+                .collect(Collectors.joining(", "));
+
+        return "run statuses: [ " + statuses + " ]";
     }
 }
