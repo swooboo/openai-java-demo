@@ -11,9 +11,11 @@ import org.springframework.web.servlet.view.RedirectView;
 import java.util.List;
 
 @Controller
-@RequestMapping("/chatgame/chat")
+@RequestMapping(GameChatWebController.CHAT_PAGE_PATH)
 public class GameChatWebController {
 
+    public static final String CHAT_TEMPLATE_NAME = "chat";
+    public static final String CHAT_PAGE_PATH = "/chatgame/" + CHAT_TEMPLATE_NAME;
     @Autowired
     GameController gameController;
 
@@ -25,7 +27,7 @@ public class GameChatWebController {
         model.addAttribute("gameMessages", gameMessages);
         model.addAttribute("lastStatus", gameController.getCurrentGameStatus());
 
-        return "chat";
+        return CHAT_TEMPLATE_NAME;
     }
 
 
