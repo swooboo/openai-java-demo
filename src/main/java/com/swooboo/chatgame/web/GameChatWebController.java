@@ -39,6 +39,6 @@ public class GameChatWebController {
         gameController.sayToGame(message);
 
         // Redirect to the GET endpoint
-        return new RedirectView("/chat", true);
+        return new RedirectView(CHAT_PAGE_PATH, true);
     }
 }
