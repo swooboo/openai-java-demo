@@ -11,7 +11,7 @@ import org.springframework.web.servlet.view.RedirectView;
 import java.util.List;
 
 @Controller
-@RequestMapping("/chat")
+@RequestMapping("/chatgame/chat")
 public class GameChatWebController {
 
     @Autowired
