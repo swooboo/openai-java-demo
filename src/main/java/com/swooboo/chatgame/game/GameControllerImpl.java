@@ -25,7 +25,8 @@ public class GameControllerImpl implements GameController {
     private Thread currentThread;
 
     public GameControllerImpl() {
-        gameAssistant = openAiService.retrieveAssistant("asst_F8CwRINxdF4Swh82R70d5z44");
+        String OPENAI_ASSISTANT_ID = System.getenv("OPENAI_ASSISTANT_ID");
+        gameAssistant = openAiService.retrieveAssistant(OPENAI_ASSISTANT_ID);
     }
 
     @Override
