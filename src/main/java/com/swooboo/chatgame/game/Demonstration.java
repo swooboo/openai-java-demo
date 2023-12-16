@@ -1,6 +1,5 @@
 package com.swooboo.chatgame.game;
 
-import com.swooboo.chatgame.game.*;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 

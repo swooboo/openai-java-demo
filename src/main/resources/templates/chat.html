@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html xmlns:th="http://www.thymeleaf.org">
+<html xmlns:th="http://www.thymeleaf.org" lang="en">
 <head>
     <meta charset="UTF-8">
     <title>Game Messages</title>
@@ -34,7 +34,9 @@
 
 <!-- Screen-wide text input -->
 <form method="POST">
-    <input name="message" type="text" class="full-width" placeholder="Enter your message here">
+    <label>
+        <input name="message" type="text" class="full-width" placeholder="Enter your message here" autofocus>
+    </label>
 </form>
 
 <!-- Small label for last status -->

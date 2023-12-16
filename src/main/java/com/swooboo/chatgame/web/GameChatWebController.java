@@ -19,6 +19,7 @@ public class GameChatWebController {
     @Autowired
     GameController gameController;
 
+    @SuppressWarnings("SameReturnValue")
     @GetMapping
     public String getGameChatPage(Model model) {
 
