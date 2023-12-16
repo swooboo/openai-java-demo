@@ -12,7 +12,9 @@ import com.theokanning.openai.threads.ThreadRequest;
 import org.springframework.scheduling.annotation.Async;
 import org.springframework.stereotype.Component;
 
+import java.util.Collections;
 import java.util.List;
+import java.util.stream.Collectors;
 
 @Component
 public class GameControllerImpl implements GameController {
@@ -62,8 +64,11 @@ public class GameControllerImpl implements GameController {
     public List<GameMessage> getAllMessagesInDialog() {
         OpenAiResponse<Message> listMessagesResponse = openAiService.listMessages(currentThread.getId());
 
-        return listMessagesResponse.data.stream()
+        List<GameMessage> messagesInReverseOrder = listMessagesResponse.data.stream()
                 .map(m -> new GameMessage(m.getRole(), m.getContent().get(0).getText().getValue()))
-                .toList();
+                .collect(Collectors.toList());
+
+        Collections.reverse(messagesInReverseOrder);
+        return messagesInReverseOrder;
     }
 }

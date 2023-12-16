@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Game Messages</title>
+    <style>
+        html {
+            font-family: sans-serif;
+        }
+        .full-width {
+            width: 100%;
+        }
+        .role {
+            font-weight: bold;
+            width: 100px;
+        }
+    </style>
+</head>
+<body>
+<table>
+    <thead>
+    </thead>
+    <tbody>
+    <!-- Loop through each gameMessage in the provided list -->
+    <tr th:each="gameMessage : ${gameMessages}">
+        <td th:text="${gameMessage.role}" class="role">Role</td>
+        <td th:text="${gameMessage.content}">Content</td>
+    </tr>
+    </tbody>
+</table>
+
+<!-- Screen-wide text input -->
+<form method="POST">
+    <input name="message" type="text" class="full-width" placeholder="Enter your message here">
+</form>
+
+</body>
+</html>
